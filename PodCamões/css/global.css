@@ -1,0 +1,86 @@
+/* Reset básico */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis de estilo */
+:root {
+  --primary-color: #4972a6;
+  --secondary-color: #333;
+  --background-color: #f8f9fa;
+  --text-color: #212529;
+  --hover-color: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --button-hover: #375b89;
+  --header-height: 100px;
+  --transition-duration: 0.3s;
+  --font-family: 'Arial', sans-serif;
+  --font-size-large: 2.5rem;
+  --font-size-medium: 1.5rem;
+  --font-size-small: 1rem;
+}
+
+/* Estilo global */
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Cabeçalho */
+header {
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #fff;
+  box-shadow: 0 10px 15px 0 var(--shadow-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Menu e Hamburger */
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.burger {
+  display: none;
+  font-size: 30px;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 200px;
+    padding: 20px;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+}
